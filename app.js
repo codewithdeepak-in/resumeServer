@@ -28,10 +28,12 @@ app.use(function(req, res, next) {
 
 
 
-const connection = mongoose.connect('mongodb://localhost:27017/resumebuilder');
-if(connection){
+(async() =>{
+    const connection = mongoose.connect('mongodb+srv://deepakchaudhary:dke5a0rWCXlRAom1@cluster0.vbwza5n.mongodb.net/resumebuilder?retryWrites=true&w=majority&appName=Cluster0');
+    if(connection){
     console.log("connected to database");
-}
+    }
+})()
 
 app.listen(port, () => {
     console.log("server is running on port " + port);
